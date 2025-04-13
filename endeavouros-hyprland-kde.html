@@ -1,0 +1,1546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-13 Sun 13:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Installing EndeavourOS with Hyprland and KDE Plasma: A Beginner's Guide</title>
+<meta name="author" content="Parikshieth Harish" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style>
+pre.src {
+background-color: #282c34 !important;
+color: #abb2bf !important;
+border: none !important;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+padding: 1.2em !important;
+border-radius: 5px !important;
+font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+line-height: 1.5 !important;
+overflow: auto !important;
+}
+.org-string { color: #98c379 !important; }
+.org-comment, .org-comment-delimiter { color: #5c6370 !important; font-style: italic !important; }
+.org-keyword { color: #c678dd !important; }
+.org-builtin { color: #56b6c2 !important; }
+.org-function-name { color: #61afef !important; }
+.org-variable-name { color: #e06c75 !important; }
+.org-type { color: #e5c07b !important; }
+.org-constant { color: #d19a66 !important; }
+.org-preprocessor { color: #c678dd !important; }
+.org-negation-char { color: #e06c75 !important; }
+.org-regexp-grouping-backslash { color: #98c379 !important; }
+.org-regexp-grouping-construct { color: #98c379 !important; }
+.linenr { color: #636d83 !important; background-color: #2c313a !important; padding: 0 8px !important; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Installing EndeavourOS with Hyprland and KDE Plasma: A Beginner&rsquo;s Guide</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org147c199">1. Introduction</a>
+<ul>
+<li><a href="#org038a177">1.1. What are Desktop Environments and Window Managers?</a></li>
+<li><a href="#org8eb7ff4">1.2. Why EndeavourOS for Beginners?</a></li>
+</ul>
+</li>
+<li><a href="#org42f5a24">2. Prerequisites</a></li>
+<li><a href="#org353c90e">3. Understanding Linux Terminology for Beginners</a>
+<ul>
+<li><a href="#orga3f6784">3.1. Basic Linux Concepts</a></li>
+</ul>
+</li>
+<li><a href="#orgcdf99ad">4. Downloading and Creating Installation Media</a>
+<ul>
+<li><a href="#org5ddf1cc">4.1. Step 1: Download the EndeavourOS ISO</a></li>
+<li><a href="#org564e759">4.2. Step 2: Create a Bootable USB Drive</a>
+<ul>
+<li><a href="#orgb91c56f">4.2.1. For Windows Users:</a></li>
+<li><a href="#org3113c94">4.2.2. For macOS Users:</a></li>
+<li><a href="#orgfcbea82">4.2.3. For Linux Users:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgba0ece5">5. Installing EndeavourOS</a>
+<ul>
+<li><a href="#orge6f2321">5.1. Step 1: Boot from the USB Drive</a></li>
+<li><a href="#orga6c802c">5.2. Step 2: Connect to the Internet</a></li>
+<li><a href="#org9eedb6b">5.3. Step 3: Launch the Installer</a></li>
+<li><a href="#org246c526">5.4. Step 4: Follow the Installation Wizard</a></li>
+<li><a href="#org874730b">5.5. Step 5: First Boot</a></li>
+</ul>
+</li>
+<li><a href="#orgef59009">6. Basic System Navigation</a>
+<ul>
+<li><a href="#orgdd42a93">6.1. KDE Plasma Interface</a></li>
+<li><a href="#org1e3645b">6.2. Basic Terminal Commands</a></li>
+</ul>
+</li>
+<li><a href="#org4c6f180">7. Installing and Setting Up Neovim</a>
+<ul>
+<li><a href="#org2d99b5a">7.1. Step 1: Install Neovim</a></li>
+<li><a href="#org4b032a9">7.2. Step 2: Basic Neovim Commands for Beginners</a></li>
+<li><a href="#org0d9fe24">7.3. Step 3: Create a Basic Neovim Configuration</a></li>
+</ul>
+</li>
+<li><a href="#orgb982fa1">8. Installing Hyprland</a>
+<ul>
+<li><a href="#orgc31193f">8.1. Step 1: Update Your System</a></li>
+<li><a href="#org3c21fb5">8.2. Step 2: Install Yay (AUR Helper)</a></li>
+<li><a href="#org37b8e2e">8.3. Step 3: Install Hyprland and Required Packages</a></li>
+<li><a href="#org6fdb8aa">8.4. Step 4: Set Up Notification Management</a></li>
+<li><a href="#org14de56d">8.5. Step 5: Create a Basic Hyprland Configuration</a></li>
+<li><a href="#org44f2696">8.6. Step 6: Configure SwayNC (Notification Center)</a></li>
+<li><a href="#org5f4ac3c">8.7. Step 7: Configure Waybar</a></li>
+</ul>
+</li>
+<li><a href="#org565bf35">9. Switching Between KDE Plasma and Hyprland</a>
+<ul>
+<li><a href="#orgd7481d6">9.1. Understanding the Hyprland Interface</a></li>
+</ul>
+</li>
+<li><a href="#org132f6a3">10. Basic System Maintenance</a>
+<ul>
+<li><a href="#org4da044f">10.1. Updating Your System</a></li>
+<li><a href="#orgac55ac9">10.2. Installing Additional Software</a></li>
+<li><a href="#org402ca99">10.3. Common Issues and Troubleshooting</a></li>
+</ul>
+</li>
+<li><a href="#org153b7be">11. Customizing Your Setup</a>
+<ul>
+<li><a href="#org1f67ac6">11.1. KDE Plasma Customization</a></li>
+<li><a href="#org523b906">11.2. Hyprland Customization</a></li>
+</ul>
+</li>
+<li><a href="#org59e5cb6">12. Further Resources for Beginners</a>
+<ul>
+<li><a href="#org0b5bf9e">12.1. Documentation and Wikis</a></li>
+<li><a href="#org40d4cf6">12.2. Community Support</a></li>
+<li><a href="#org3f4b72a">12.3. Learning Resources</a></li>
+</ul>
+</li>
+<li><a href="#org09d3528">13. Backing Up Your System</a>
+<ul>
+<li><a href="#org5615d18">13.1. Simple Backup Methods</a></li>
+</ul>
+</li>
+<li><a href="#org5ae5db8">14. Conclusion</a>
+<ul>
+<li><a href="#orgd81afb3">14.1. Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="org77b8681" class="figure">
+<p><img src="./me.png" alt="me.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>My hyprland setup :3</p>
+</div>
+<div id="outline-container-org147c199" class="outline-2">
+<h2 id="org147c199"><span class="section-number-2">1.</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Welcome to the world of Linux! This guide is designed specifically for newcomers to Linux who want to explore a customizable and powerful operating system. EndeavourOS is an excellent starting point for beginners because it simplifies the installation process while providing access to the vast capabilities of Arch Linux.
+</p>
+
+<p>
+In simple terms, EndeavourOS is a user-friendly version of Arch Linux, which is known for its flexibility and customization options. This guide will walk you through installing EndeavourOS and setting it up with two complementary interfaces:
+</p>
+
+<ol class="org-ol">
+<li>KDE Plasma: A full-featured desktop environment similar to Windows or macOS in its comprehensive functionality</li>
+<li>Hyprland: A modern window management system that automatically arranges your applications in an efficient manner</li>
+</ol>
+</div>
+<div id="outline-container-org038a177" class="outline-3">
+<h3 id="org038a177"><span class="section-number-3">1.1.</span> What are Desktop Environments and Window Managers?</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+For those new to Linux, it&rsquo;s important to understand two key concepts:
+</p>
+
+<ul class="org-ul">
+<li><b>Desktop Environment</b>: This is the complete graphical interface you interact with, including the desktop, application menus, system settings, and built-in applications. KDE Plasma is one of the most feature-rich desktop environments available.</li>
+
+<li><b>Window Manager</b>: This component controls how individual application windows appear and behave on your screen. Hyprland is a special type called a &ldquo;tiling window manager&rdquo; that automatically arranges windows in a space-efficient way without overlapping.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8eb7ff4" class="outline-3">
+<h3 id="org8eb7ff4"><span class="section-number-3">1.2.</span> Why EndeavourOS for Beginners?</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+EndeavourOS offers several advantages for Linux newcomers:
+</p>
+
+<ul class="org-ul">
+<li>Simplified installation process compared to traditional Arch Linux</li>
+<li>&ldquo;Rolling release&rdquo; model, meaning you receive continuous updates rather than major version upgrades</li>
+<li>Helpful and active community that welcomes beginners</li>
+<li>Minimal unnecessary software while maintaining user-friendliness</li>
+<li>Access to the Arch User Repository (AUR), an extensive collection of additional software</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org42f5a24" class="outline-2">
+<h2 id="org42f5a24"><span class="section-number-2">2.</span> Prerequisites</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Before beginning the installation, please ensure you have:
+</p>
+
+<ul class="org-ul">
+<li>A USB drive with at least 4GB storage capacity</li>
+<li>A backup of any important data (if installing on a computer with existing data)</li>
+<li>A computer with at least 4GB of RAM (8GB recommended)</li>
+<li>Approximately 20GB of free disk space (more is better)</li>
+<li>A stable internet connection for downloading the installation files and updates</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org353c90e" class="outline-2">
+<h2 id="org353c90e"><span class="section-number-2">3.</span> Understanding Linux Terminology for Beginners</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Before proceeding, let&rsquo;s clarify some common Linux terms you&rsquo;ll encounter throughout this guide:
+</p>
+</div>
+<div id="outline-container-orga3f6784" class="outline-3">
+<h3 id="orga3f6784"><span class="section-number-3">3.1.</span> Basic Linux Concepts</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li><b>Distribution (Distro)</b>: A specific version of Linux packaged with particular software and configuration. EndeavourOS is a distribution based on Arch Linux.</li>
+
+<li><b>Terminal/Console</b>: The command-line interface where you can type text commands. Don&rsquo;t worry—this guide will explain any commands you need to use.</li>
+
+<li><b>Package Manager</b>: Software that handles installing, updating, and removing applications. EndeavourOS uses &ldquo;pacman&rdquo; as its package manager.</li>
+
+<li><b>Repository</b>: A collection of software packages available for installation through the package manager.</li>
+
+<li><b>AUR (Arch User Repository)</b>: A community-driven repository containing package descriptions that allow you to compile and install additional software.</li>
+
+<li><b>Wayland/X11</b>: Display server protocols that handle the communication between your applications and your display. Hyprland uses Wayland, which is more modern.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcdf99ad" class="outline-2">
+<h2 id="orgcdf99ad"><span class="section-number-2">4.</span> Downloading and Creating Installation Media</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org5ddf1cc" class="outline-3">
+<h3 id="org5ddf1cc"><span class="section-number-3">4.1.</span> Step 1: Download the EndeavourOS ISO</h3>
+<div class="outline-text-3" id="text-4-1">
+<ol class="org-ol">
+<li>Visit the official EndeavourOS website at <a href="https://endeavouros.com/">https://endeavouros.com/</a></li>
+<li>Navigate to the &ldquo;Download&rdquo; section</li>
+<li>Download the latest ISO file (approximately 2GB)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org564e759" class="outline-3">
+<h3 id="org564e759"><span class="section-number-3">4.2.</span> Step 2: Create a Bootable USB Drive</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+There are several user-friendly tools to create a bootable USB drive:
+</p>
+</div>
+<div id="outline-container-orgb91c56f" class="outline-4">
+<h4 id="orgb91c56f"><span class="section-number-4">4.2.1.</span> For Windows Users:</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<ol class="org-ol">
+<li>Download and install Rufus or Balena Etcher</li>
+<li>Launch the application</li>
+<li>Select the downloaded EndeavourOS ISO file</li>
+<li>Select your USB drive (Warning: All data on the drive will be erased)</li>
+<li>Click &ldquo;Start&rdquo; or &ldquo;Flash&rdquo; and wait for the process to complete</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org3113c94" class="outline-4">
+<h4 id="org3113c94"><span class="section-number-4">4.2.2.</span> For macOS Users:</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<ol class="org-ol">
+<li>Download and install Balena Etcher</li>
+<li>Launch Etcher</li>
+<li>Select the downloaded EndeavourOS ISO file</li>
+<li>Select your USB drive</li>
+<li>Click &ldquo;Flash&rdquo; and wait for the process to complete</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgfcbea82" class="outline-4">
+<h4 id="orgfcbea82"><span class="section-number-4">4.2.3.</span> For Linux Users:</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<p>
+If you&rsquo;re already using Linux on another system, you can use the &rsquo;dd&rsquo; command or Balena Etcher.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba0ece5" class="outline-2">
+<h2 id="orgba0ece5"><span class="section-number-2">5.</span> Installing EndeavourOS</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orge6f2321" class="outline-3">
+<h3 id="orge6f2321"><span class="section-number-3">5.1.</span> Step 1: Boot from the USB Drive</h3>
+<div class="outline-text-3" id="text-5-1">
+<ol class="org-ol">
+<li>Insert the USB drive into your computer</li>
+<li>Restart your computer</li>
+<li>Access the boot menu (typically by pressing F12, F10, or Esc during startup—this varies by manufacturer)</li>
+<li>Select your USB drive from the boot menu</li>
+<li>When the EndeavourOS boot menu appears, select &ldquo;Boot EndeavourOS Live&rdquo;</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga6c802c" class="outline-3">
+<h3 id="orga6c802c"><span class="section-number-3">5.2.</span> Step 2: Connect to the Internet</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Once the live environment loads:
+</p>
+
+<ol class="org-ol">
+<li>Click on the network icon in the system tray (bottom right)</li>
+<li>Select your Wi-Fi network and enter the password</li>
+<li>Wait for the connection to establish</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9eedb6b" class="outline-3">
+<h3 id="org9eedb6b"><span class="section-number-3">5.3.</span> Step 3: Launch the Installer</h3>
+<div class="outline-text-3" id="text-5-3">
+<ol class="org-ol">
+<li>On the welcome screen, click &ldquo;Start the Installer&rdquo;</li>
+<li>Select &ldquo;Online&rdquo; installation mode for more options</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org246c526" class="outline-3">
+<h3 id="org246c526"><span class="section-number-3">5.4.</span> Step 4: Follow the Installation Wizard</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+The installer will guide you through several steps:
+</p>
+
+<ol class="org-ol">
+<li><b>Language Selection</b>: Choose your preferred language</li>
+<li><b>Location</b>: Select your region and timezone</li>
+<li><b>Keyboard Layout</b>: Choose your keyboard configuration</li>
+<li><b>Partitioning</b>:
+<ul class="org-ul">
+<li>For beginners, the &ldquo;Erase disk&rdquo; option is simplest (Warning: This will delete all existing data)</li>
+<li>If you want to dual-boot with another operating system, consider seeking additional guidance as this requires more advanced partitioning</li>
+</ul></li>
+
+<li><b>User Account</b>:
+<ul class="org-ul">
+<li>Create your user name</li>
+<li>Enter your full name (optional)</li>
+<li>Create a strong password</li>
+<li>Create a separate root password or use the same password (using the same is fine for personal computers)</li>
+</ul></li>
+
+<li><b>Desktop Selection</b>:
+<ul class="org-ul">
+<li>Choose &ldquo;KDE Plasma&rdquo; from the desktop environment options</li>
+<li>We will install Hyprland separately after the initial setup</li>
+</ul></li>
+
+<li><b>Review</b>: Confirm your selections</li>
+<li><b>Installation</b>: Click &ldquo;Install&rdquo; and confirm the warning about data deletion</li>
+<li>Wait for the installation to complete (typically 15-30 minutes depending on your internet speed)</li>
+<li>When prompted, click &ldquo;Restart Now&rdquo;</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org874730b" class="outline-3">
+<h3 id="org874730b"><span class="section-number-3">5.5.</span> Step 5: First Boot</h3>
+<div class="outline-text-3" id="text-5-5">
+<ol class="org-ol">
+<li>Remove the USB drive when prompted</li>
+<li>The system will restart and boot into your new EndeavourOS installation</li>
+<li>Log in using the username and password you created during installation</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgef59009" class="outline-2">
+<h2 id="orgef59009"><span class="section-number-2">6.</span> Basic System Navigation</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Now that you&rsquo;ve installed EndeavourOS with KDE Plasma, let&rsquo;s go over some basics:
+</p>
+</div>
+<div id="outline-container-orgdd42a93" class="outline-3">
+<h3 id="orgdd42a93"><span class="section-number-3">6.1.</span> KDE Plasma Interface</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+The KDE Plasma interface includes:
+</p>
+
+<ul class="org-ul">
+<li><b>Application Menu</b>: Similar to the Start menu in Windows, found in the bottom left</li>
+<li><b>System Tray</b>: Icons for network, volume, battery, etc. in the bottom right</li>
+<li><b>Desktop</b>: The main workspace where you can place files and shortcuts</li>
+<li><b>File Manager</b>: Called &ldquo;Dolphin&rdquo; in KDE, allows you to browse your files graphically</li>
+<li><b>System Settings</b>: Comprehensive control panel for customizing your system</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1e3645b" class="outline-3">
+<h3 id="org1e3645b"><span class="section-number-3">6.2.</span> Basic Terminal Commands</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+While KDE Plasma provides a graphical interface for most tasks, understanding some basic terminal commands is useful:
+</p>
+
+<ol class="org-ol">
+<li>Open the terminal by pressing Alt+F2 and typing &ldquo;konsole&rdquo; or finding it in the application menu</li>
+<li>Some essential commands:
+<ul class="org-ul">
+<li>`ls`: List files in the current directory</li>
+<li>`cd [directory]`: Change to the specified directory</li>
+<li>`sudo [command]`: Run a command with administrator privileges</li>
+<li>`pacman -Syu`: Update your system</li>
+<li>`clear`: Clear the terminal screen</li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org4c6f180" class="outline-2">
+<h2 id="org4c6f180"><span class="section-number-2">7.</span> Installing and Setting Up Neovim</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+As we&rsquo;ll be using Neovim throughout this guide, let&rsquo;s take a moment to properly install and configure it for an optimal experience:
+</p>
+</div>
+<div id="outline-container-org2d99b5a" class="outline-3">
+<h3 id="org2d99b5a"><span class="section-number-3">7.1.</span> Step 1: Install Neovim</h3>
+<div class="outline-text-3" id="text-7-1">
+<ol class="org-ol">
+<li>Open a terminal and run:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">sudo</span> pacman -S neovim
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4b032a9" class="outline-3">
+<h3 id="org4b032a9"><span class="section-number-3">7.2.</span> Step 2: Basic Neovim Commands for Beginners</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+Neovim is a powerful text editor that operates in different modes:
+</p>
+
+<ul class="org-ul">
+<li><b>Normal mode</b>: The default mode for navigation and commands</li>
+<li><b>Insert mode</b>: For typing text (enter with `i`, exit with `Esc`)</li>
+<li><b>Visual mode</b>: For selecting text (enter with `v`, exit with `Esc`)</li>
+<li><b>Command mode</b>: For executing commands (enter with `:`, execute with `Enter`)</li>
+</ul>
+
+<p>
+Essential commands to know:
+</p>
+
+<ol class="org-ol">
+<li><b>Navigation</b>:
+<ul class="org-ul">
+<li>Arrow keys work for basic movement</li>
+<li>`h` (left), `j` (down), `k` (up), `l` (right) for movement</li>
+<li>`w` to move forward by word, `b` to move backward by word</li>
+<li>`0` to move to the beginning of a line, `$` to move to the end</li>
+</ul></li>
+
+<li><b>Editing</b>:
+<ul class="org-ul">
+<li>`i` to enter insert mode at the cursor</li>
+<li>`a` to enter insert mode after the cursor</li>
+<li>`o` to create a new line below and enter insert mode</li>
+<li>`x` to delete a character</li>
+<li>`dd` to delete a line</li>
+<li>`yy` to copy a line (yank)</li>
+<li>`p` to paste</li>
+</ul></li>
+
+<li><b>Saving and Exiting</b>:
+<ul class="org-ul">
+<li>`:w` to save (write)</li>
+<li>`:q` to quit</li>
+<li>`:wq` to save and quit</li>
+<li>`:q!` to quit without saving</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0d9fe24" class="outline-3">
+<h3 id="org0d9fe24"><span class="section-number-3">7.3.</span> Step 3: Create a Basic Neovim Configuration</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+For a better editing experience, create a simple configuration:
+</p>
+
+<ol class="org-ol">
+<li>Create the Neovim configuration directory:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">mkdir</span> -p ~/.config/nvim
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Create the init.vim file:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">nvim ~/.config/nvim/init.vim
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Add the following basic configuration (press `i` to enter insert mode):</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-vim">" Basic Settings
+set number          " Show line numbers
+set relativenumber  " Show relative line numbers
+set expandtab       " Use spaces instead of tabs
+set tabstop=4       " Tab width
+set shiftwidth=4    " Indentation width
+set softtabstop=4   " Number of spaces per tab
+set autoindent      " Auto indent
+set smartindent     " Smart indent
+set wrap            " Wrap lines
+set linebreak       " Break lines at words
+set scrolloff=8     " Start scrolling 8 lines from the top/bottom
+set sidescrolloff=8 " Start scrolling 8 characters from the left/right
+set cursorline      " Highlight current line
+set showmatch       " Show matching brackets
+set incsearch       " Incremental search
+set hlsearch        " Highlight search results
+set ignorecase      " Ignore case in search
+set smartcase       " Override ignore case if search contains uppercase
+
+" Better split navigation
+nnoremap &lt;C-J&gt; &lt;C-W&gt;&lt;C-J&gt;
+nnoremap &lt;C-K&gt; &lt;C-W&gt;&lt;C-K&gt;
+nnoremap &lt;C-L&gt; &lt;C-W&gt;&lt;C-L&gt;
+nnoremap &lt;C-H&gt; &lt;C-W&gt;&lt;C-H&gt;
+
+" Set leader key to space
+let mapleader = " "
+
+" Faster save and quit
+nnoremap &lt;leader&gt;w :w&lt;CR&gt;
+nnoremap &lt;leader&gt;q :q&lt;CR&gt;
+nnoremap &lt;leader&gt;x :x&lt;CR&gt;
+
+" Enable syntax highlighting
+syntax enable
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Save the file by pressing `Esc` to exit insert mode, then typing `:wq` and pressing Enter</li>
+</ol>
+
+<p>
+This simple configuration provides a good starting point for a more comfortable Neovim experience. As you become more familiar with Neovim, you can explore more advanced features and plugins.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb982fa1" class="outline-2">
+<h2 id="orgb982fa1"><span class="section-number-2">8.</span> Installing Hyprland</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Now let&rsquo;s install Hyprland alongside KDE Plasma:
+</p>
+</div>
+<div id="outline-container-orgc31193f" class="outline-3">
+<h3 id="orgc31193f"><span class="section-number-3">8.1.</span> Step 1: Update Your System</h3>
+<div class="outline-text-3" id="text-8-1">
+<ol class="org-ol">
+<li>Open Konsole (the terminal application)</li>
+<li>Enter the following command:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">sudo</span> pacman -Syu
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Enter your password when prompted</li>
+<li>Type &rsquo;y&rsquo; to confirm the update</li>
+<li>Wait for the system update to complete</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org3c21fb5" class="outline-3">
+<h3 id="org3c21fb5"><span class="section-number-3">8.2.</span> Step 2: Install Yay (AUR Helper)</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+EndeavourOS comes with &ldquo;yay&rdquo; pre-installed, but if for some reason it&rsquo;s not available, you can install it with:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">sudo</span> pacman -S --needed <span style="color: #bd93f9;">git</span> base-devel
+<span style="color: #bd93f9;">git</span> clone https://aur.archlinux.org/yay.git
+<span style="color: #bd93f9;">cd</span> yay
+makepkg -si
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org37b8e2e" class="outline-3">
+<h3 id="org37b8e2e"><span class="section-number-3">8.3.</span> Step 3: Install Hyprland and Required Packages</h3>
+<div class="outline-text-3" id="text-8-3">
+<ol class="org-ol">
+<li>Now we&rsquo;ll install Hyprland from the AUR to get the latest version, along with other required packages:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">yay -S hyprland-git waybar-hyprland-git kitty wofi grim slurp wl-clipboard polkit-kde-agent qt5-wayland qt6-wayland
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Type &rsquo;y&rsquo; to confirm installation</li>
+<li>Wait for the installation to complete</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6fdb8aa" class="outline-3">
+<h3 id="org6fdb8aa"><span class="section-number-3">8.4.</span> Step 4: Set Up Notification Management</h3>
+<div class="outline-text-3" id="text-8-4">
+<p>
+Proper notification handling is essential for a complete desktop experience. Let&rsquo;s install a notification daemon:
+</p>
+
+<ol class="org-ol">
+<li>Install SwayNotificationCenter (SwayNC), a feature-rich notification center:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">yay -S swaync
+</pre>
+</div>
+
+<p>
+Alternatively, you can install Dunst for a more minimal approach:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">yay -S dunst
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Make sure your notification daemon starts with Hyprland by adding it to your configuration (we&rsquo;ll set this up in the next step)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org14de56d" class="outline-3">
+<h3 id="org14de56d"><span class="section-number-3">8.5.</span> Step 5: Create a Basic Hyprland Configuration</h3>
+<div class="outline-text-3" id="text-8-5">
+<ol class="org-ol">
+<li>Create the configuration directory:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">mkdir</span> -p ~/.config/hypr
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Create the configuration file using Neovim:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">nvim ~/.config/hypr/hyprland.conf
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Add the following basic configuration (press `i` to enter insert mode in Neovim):</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #6272a4;"># </span><span style="color: #6272a4;">Monitor configuration</span>
+<span style="color: #ffc9e8;">monitor</span>=,preferred,auto,<span style="color: #bd93f9; font-weight: bold;">1</span>
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Execute applications at launch</span>
+<span style="color: #ffc9e8;">exec-once</span> = waybar
+<span style="color: #ffc9e8;">exec-once</span> = swaync
+<span style="color: #ffc9e8;">exec-once</span> = nm-applet
+<span style="color: #ffc9e8;">exec-once</span> = /usr/lib/polkit-kde-authentication-agent-1
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Set applications</span>
+<span style="color: #ffc9e8;">$terminal</span> = kitty
+<span style="color: #ffc9e8;">$fileManager</span> = dolphin
+<span style="color: #ffc9e8;">$menu</span> = wofi --show drun
+<span style="color: #ffc9e8;">$browser</span> = firefox
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Some default env vars</span>
+<span style="color: #ffc9e8;">env</span> = XCURSOR_SIZE,<span style="color: #bd93f9; font-weight: bold;">24</span>
+<span style="color: #ffc9e8;">env</span> = QT_QPA_PLATFORM,wayland
+<span style="color: #ffc9e8;">env</span> = QT_QPA_PLATFORMTHEME,qt6ct
+<span style="color: #ffc9e8;">env</span> = QT_WAYLAND_DISABLE_WINDOWDECORATION,<span style="color: #bd93f9; font-weight: bold;">1</span>
+<span style="color: #ffc9e8;">env</span> = QT_AUTO_SCREEN_SCALE_FACTOR,<span style="color: #bd93f9; font-weight: bold;">1</span>
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Input configuration</span>
+<span style="color: #bd93f9;">input</span> {
+    <span style="color: #ffc9e8;">kb_layout</span> = us
+    <span style="color: #ffc9e8;">follow_mouse</span> = <span style="color: #bd93f9; font-weight: bold;">1</span>
+    <span style="color: #ffc9e8;">sensitivity</span> = <span style="color: #bd93f9; font-weight: bold;">0</span> <span style="color: #6272a4;"># </span><span style="color: #6272a4;">-1.0 - 1.0, 0 means no modification</span>
+    <span style="color: #bd93f9;">touchpad</span> {
+        <span style="color: #ffc9e8;">natural_scroll</span> = false
+    }
+}
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">General window layout and colors</span>
+<span style="color: #bd93f9;">general</span> {
+    <span style="color: #ffc9e8;">gaps_in</span> = <span style="color: #bd93f9; font-weight: bold;">5</span>
+    <span style="color: #ffc9e8;">gaps_out</span> = <span style="color: #bd93f9; font-weight: bold;">10</span>
+    <span style="color: #ffc9e8;">border_size</span> = <span style="color: #bd93f9; font-weight: bold;">2</span>
+    <span style="color: #ffc9e8;">col.active_border</span> = rgba(33ccffee) rgba(bd93f9ff) 45deg
+    <span style="color: #ffc9e8;">col.inactive_border</span> = rgba(595959aa)
+    <span style="color: #ffc9e8;">layout</span> = dwindle
+
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">Please see wiki before enabling</span>
+    <span style="color: #ffc9e8;">allow_tearing</span> = false
+}
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Decoration settings</span>
+<span style="color: #bd93f9;">decoration</span> {
+    <span style="color: #ffc9e8;">rounding</span> = <span style="color: #bd93f9; font-weight: bold;">10</span>
+
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">Add transparency to windows</span>
+    <span style="color: #ffc9e8;">active_opacity</span> = <span style="color: #bd93f9; font-weight: bold;">1.0</span>
+    <span style="color: #ffc9e8;">inactive_opacity</span> = <span style="color: #bd93f9; font-weight: bold;">1.0</span>
+
+    <span style="color: #bd93f9;">blur</span> {
+        <span style="color: #ffc9e8;">enabled</span> = true
+        <span style="color: #ffc9e8;">size</span> = <span style="color: #bd93f9; font-weight: bold;">3</span>
+        <span style="color: #ffc9e8;">passes</span> = <span style="color: #bd93f9; font-weight: bold;">2</span>
+    }
+
+    <span style="color: #bd93f9;">shadow</span> {
+        <span style="color: #ffc9e8;">enabled</span> = true
+        <span style="color: #ffc9e8;">size</span> = <span style="color: #bd93f9; font-weight: bold;">3</span>
+        <span style="color: #ffc9e8;">offset</span> = <span style="color: #bd93f9; font-weight: bold;">1</span> <span style="color: #bd93f9; font-weight: bold;">1</span>
+    }
+}
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Animation settings</span>
+<span style="color: #bd93f9;">animations</span> {
+    <span style="color: #ffc9e8;">enabled</span> = yes
+
+    <span style="color: #ffc9e8;">bezier</span> = myBezier, <span style="color: #bd93f9; font-weight: bold;">0.05</span>, <span style="color: #bd93f9; font-weight: bold;">0.9</span>, <span style="color: #bd93f9; font-weight: bold;">0.1</span>, <span style="color: #bd93f9; font-weight: bold;">1.05</span>
+    <span style="color: #ffc9e8;">bezier</span> = easeOutQuint, <span style="color: #bd93f9; font-weight: bold;">0.23</span>, <span style="color: #bd93f9; font-weight: bold;">1</span>, <span style="color: #bd93f9; font-weight: bold;">0.32</span>, <span style="color: #bd93f9; font-weight: bold;">1</span>
+
+    <span style="color: #ffc9e8;">animation</span> = windows, <span style="color: #bd93f9; font-weight: bold;">1</span>, <span style="color: #bd93f9; font-weight: bold;">7</span>, myBezier
+    <span style="color: #ffc9e8;">animation</span> = windowsOut, <span style="color: #bd93f9; font-weight: bold;">1</span>, <span style="color: #bd93f9; font-weight: bold;">7</span>, default, popin 80%
+    <span style="color: #ffc9e8;">animation</span> = border, <span style="color: #bd93f9; font-weight: bold;">1</span>, <span style="color: #bd93f9; font-weight: bold;">10</span>, default
+    <span style="color: #ffc9e8;">animation</span> = fade, <span style="color: #bd93f9; font-weight: bold;">1</span>, <span style="color: #bd93f9; font-weight: bold;">7</span>, default
+    <span style="color: #ffc9e8;">animation</span> = workspaces, <span style="color: #bd93f9; font-weight: bold;">1</span>, <span style="color: #bd93f9; font-weight: bold;">6</span>, default
+}
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Layout settings</span>
+<span style="color: #bd93f9;">dwindle</span> {
+    <span style="color: #ffc9e8;">pseudotile</span> = yes <span style="color: #6272a4;"># </span><span style="color: #6272a4;">master switch for pseudotiling</span>
+    <span style="color: #ffc9e8;">preserve_split</span> = yes <span style="color: #6272a4;"># </span><span style="color: #6272a4;">you probably want this</span>
+}
+
+<span style="color: #bd93f9;">master</span> {
+    <span style="color: #ffc9e8;">new_is_master</span> = true
+}
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Window rules</span>
+<span style="color: #ffc9e8;">windowrulev2</span> = opacity <span style="color: #bd93f9; font-weight: bold;">0.9</span> <span style="color: #bd93f9; font-weight: bold;">0.9</span>,class:^(kitty|wofi|thunar)$
+<span style="color: #ffc9e8;">windowrulev2</span> = suppressevent maximize, class:.* <span style="color: #6272a4;"># </span><span style="color: #6272a4;">prevents windows from maximizing themselves</span>
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Key bindings</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, Return, exec, $terminal
+<span style="color: #ffc9e8;">bind</span> = SUPER, Q, killactive,
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, X, exit,
+<span style="color: #ffc9e8;">bind</span> = SUPER, E, exec, $fileManager
+<span style="color: #ffc9e8;">bind</span> = SUPER, V, togglefloating,
+<span style="color: #ffc9e8;">bind</span> = SUPER, R, exec, $menu
+<span style="color: #ffc9e8;">bind</span> = SUPER, W, exec, $browser
+<span style="color: #ffc9e8;">bind</span> = SUPER, F, fullscreen,
+<span style="color: #ffc9e8;">bind</span> = SUPER, P, pseudo,
+<span style="color: #ffc9e8;">bind</span> = SUPER, J, togglesplit,
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Move focus with mainMod + arrow keys</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, left, movefocus, l
+<span style="color: #ffc9e8;">bind</span> = SUPER, right, movefocus, r
+<span style="color: #ffc9e8;">bind</span> = SUPER, up, movefocus, u
+<span style="color: #ffc9e8;">bind</span> = SUPER, down, movefocus, d
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Move windows with mainMod + SHIFT + arrow keys</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, left, movewindow, l
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, right, movewindow, r
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, up, movewindow, u
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, down, movewindow, d
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Switch workspaces with mainMod + [0-9]</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">1</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">1</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">2</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">2</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">3</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">3</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">4</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">4</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">5</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">5</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">6</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">6</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">7</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">7</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">8</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">8</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">9</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">9</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, <span style="color: #bd93f9; font-weight: bold;">0</span>, workspace, <span style="color: #bd93f9; font-weight: bold;">10</span>
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Move active window to a workspace with mainMod + SHIFT + [0-9]</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">1</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">1</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">2</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">2</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">3</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">3</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">4</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">4</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">5</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">5</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">6</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">6</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">7</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">7</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">8</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">8</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">9</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">9</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, <span style="color: #bd93f9; font-weight: bold;">0</span>, movetoworkspace, <span style="color: #bd93f9; font-weight: bold;">10</span>
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Special workspace (scratchpad)</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, S, togglespecialworkspace, magic
+<span style="color: #ffc9e8;">bind</span> = SUPER SHIFT, S, movetoworkspace, special:magic
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Scroll through existing workspaces with mainMod + scroll</span>
+<span style="color: #ffc9e8;">bind</span> = SUPER, mouse_down, workspace, e+1
+<span style="color: #ffc9e8;">bind</span> = SUPER, mouse_up, workspace, e-1
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Move/resize windows with mainMod + LMB/RMB and dragging</span>
+<span style="color: #ffc9e8;">bindm</span> = SUPER, mouse:<span style="color: #bd93f9; font-weight: bold;">272</span>, movewindow
+<span style="color: #ffc9e8;">bindm</span> = SUPER, mouse:<span style="color: #bd93f9; font-weight: bold;">273</span>, resizewindow
+
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Screenshot binding</span>
+<span style="color: #ffc9e8;">bind</span> = , Print, exec, grim -g <span style="color: #f1fa8c;">"$(slurp)"</span> ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Save the file by pressing `Esc` to exit insert mode, then typing `:wq` and pressing Enter</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org44f2696" class="outline-3">
+<h3 id="org44f2696"><span class="section-number-3">8.6.</span> Step 6: Configure SwayNC (Notification Center)</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+If you chose to install SwayNC, you&rsquo;ll need to create a basic configuration:
+</p>
+
+<ol class="org-ol">
+<li>Create the configuration directory:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">mkdir</span> -p ~/.config/swaync
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Create the configuration file using Neovim:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">nvim ~/.config/swaync/config.json
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Add the following basic configuration (press `i` to enter insert mode):</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 10,
+  "notification-icon-size": 64,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "fit-to-screen": true,
+  "control-center-width": 500,
+  "control-center-height": 600,
+  "notification-window-width": 500,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": true,
+  "hide-on-action": true,
+  "script-fail-notify": true
+}
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Save the file by pressing `Esc` to exit insert mode, then typing `:wq` and pressing Enter</li>
+
+<li>Create a style file:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">nvim ~/.config/swaync/style.css
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Add the following basic style (press `i` to enter insert mode):</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-css">&#8203;* {
+  <span style="color: #bd93f9;">all</span>: unset;
+  <span style="color: #bd93f9;">font-family</span>: <span style="color: #f1fa8c;">"JetBrains Mono"</span>, <span style="color: #f1fa8c;">"Font Awesome 5 Free"</span>;
+  <span style="color: #bd93f9;">font-size</span>: 14px;
+}
+
+<span style="color: #50fa7b;">.notification-row</span> {
+  <span style="color: #bd93f9;">outline</span>: none;
+}
+
+<span style="color: #50fa7b;">.notification</span> {
+  <span style="color: #bd93f9;">margin</span>: 6px;
+  <span style="color: #bd93f9;">padding</span>: 10px;
+  <span style="color: #bd93f9;">border-radius</span>: 12px;
+  <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #1e1e2e;">#1e1e2e</span>;
+  <span style="color: #bd93f9;">border</span>: 2px solid <span style="color: #ffffff; background-color: #313244;">#313244</span>;
+}
+
+<span style="color: #50fa7b;">.notification-content</span> {
+  <span style="color: #bd93f9;">padding</span>: 10px;
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #cdd6f4;">#cdd6f4</span>;
+}
+
+<span style="color: #50fa7b;">.notification-default-action,</span>
+<span style="color: #50fa7b;">.notification-action</span> {
+  <span style="color: #bd93f9;">padding</span>: 5px;
+  <span style="color: #bd93f9;">margin</span>: 5px;
+  <span style="color: #bd93f9;">border-radius</span>: 6px;
+  <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #313244;">#313244</span>;
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #cdd6f4;">#cdd6f4</span>;
+}
+
+<span style="color: #50fa7b;">.close-button</span> {
+  <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #f38ba8;">#f38ba8</span>;
+  <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #1e1e2e;">#1e1e2e</span>;
+  <span style="color: #bd93f9;">border-radius</span>: 6px;
+  <span style="color: #bd93f9;">margin</span>: 5px;
+}
+
+<span style="color: #50fa7b;">.notification-default-action:hover,</span>
+<span style="color: #50fa7b;">.notification-action:hover</span> {
+  <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #45475a;">#45475a</span>;
+}
+
+<span style="color: #50fa7b;">.close-button:hover</span> {
+  <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #f5c2e7;">#f5c2e7</span>;
+}
+
+<span style="color: #50fa7b;">.notification-body</span> {
+  <span style="color: #bd93f9;">padding</span>: 5px;
+}
+
+<span style="color: #50fa7b;">.control-center</span> {
+  <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #1e1e2e;">#1e1e2e</span>;
+  <span style="color: #bd93f9;">border-radius</span>: 12px;
+  <span style="color: #bd93f9;">border</span>: 2px solid <span style="color: #ffffff; background-color: #313244;">#313244</span>;
+  <span style="color: #bd93f9;">margin</span>: 10px;
+  <span style="color: #bd93f9;">padding</span>: 10px;
+}
+
+<span style="color: #50fa7b;">.control-center-list</span> {
+  <span style="color: #bd93f9;">background-color</span>: transparent;
+}
+
+<span style="color: #50fa7b;">.floating-notifications</span> {
+  <span style="color: #bd93f9;">background-color</span>: transparent;
+}
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Save the file by pressing `Esc` to exit insert mode, then typing `:wq` and pressing Enter</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org5f4ac3c" class="outline-3">
+<h3 id="org5f4ac3c"><span class="section-number-3">8.7.</span> Step 7: Configure Waybar</h3>
+<div class="outline-text-3" id="text-8-7">
+<ol class="org-ol">
+<li>Create the Waybar configuration directory:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">mkdir</span> -p ~/.config/waybar
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Create the configuration file using Neovim:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">nvim ~/.config/waybar/config
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Add the following basic configuration (press `i` to enter insert mode):</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "network", "pulseaudio", "cpu", "memory", "temperature", "battery", "clock"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10"
+        },
+        "sort-by-number": true
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 50
+    },
+
+    "tray": {
+        "spacing": 10,
+        "icon-size": 16
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "&lt;big&gt;{:%Y %B}&lt;/big&gt;\n&lt;tt&gt;&lt;small&gt;{calendar}&lt;/small&gt;&lt;/tt&gt;"
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "interval": 1,
+        "tooltip": true
+    },
+
+    "memory": {
+        "format": "{}% ",
+        "interval": 1
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "Connected  ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "nm-connection-editor",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": " ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Save the file by pressing `Esc` to exit insert mode, then typing `:wq` and pressing Enter</li>
+
+<li>Create a style file:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">nvim ~/.config/waybar/style.css
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Add the following custom style featuring a darker, more purple Dracula theme (press `i` to enter insert mode):</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-css">&#8203;* {
+  <span style="color: #bd93f9;">font-family</span>: FantasqueSansMono Nerd Font;
+  <span style="color: #bd93f9;">font-size</span>: 17px;
+  <span style="color: #bd93f9;">min-height</span>: <span style="color: #bd93f9; font-weight: bold;">0</span>;
+}
+<span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Darker, More Purple Dracula Theme</span><span style="color: #6272a4;"> */</span>
+<span style="color: #50fa7b;">body</span> {
+  <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #100d1c;">#100d1c</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Darker with a Deep Purple Hue</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #f8f8f2;">#f8f8f2</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Foreground</span><span style="color: #6272a4;"> */</span>
+}
+<span style="color: #50fa7b;">#waybar</span> {
+  <span style="color: #bd93f9;">background</span>: transparent;
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #c792ea;">#c792ea</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">More Purple</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">margin</span>: 5px 5px;
+}
+<span style="color: #50fa7b;">#workspaces</span> {
+  <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #1a142b;">#1a142b</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Dark Purple</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">border-radius</span>: 1rem;
+  <span style="color: #bd93f9;">margin</span>: 5px;
+  <span style="color: #bd93f9;">margin-left</span>: 1rem;
+}
+<span style="color: #50fa7b;">#workspaces button</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #f8f8f2;">#f8f8f2</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Light Foreground</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">border-radius</span>: 1rem;
+  <span style="color: #bd93f9;">padding</span>: 0.4rem;
+}
+<span style="color: #50fa7b;">#workspaces button.active</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #50fa7b;">#50fa7b</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Bright Neon Purple</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">-webkit-filter</span>: grayscale(<span style="color: #bd93f9; font-weight: bold;">100</span>%) blur(3px) brightness(<span style="color: #bd93f9; font-weight: bold;">120</span>%);
+  <span style="color: #bd93f9;">border-radius</span>: 1rem;
+}
+<span style="color: #50fa7b;">#workspaces button:hover</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #c792ea;">#c792ea</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Softer Purple</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">border-radius</span>: 1rem;
+}
+<span style="color: #50fa7b;">#custom-music,</span>
+<span style="color: #50fa7b;">#tray,</span>
+<span style="color: #50fa7b;">#window,</span>
+<span style="color: #50fa7b;">#backlight,</span>
+<span style="color: #50fa7b;">#clock,</span>
+<span style="color: #50fa7b;">#battery,</span>
+<span style="color: #50fa7b;">#pulseaudio,</span>
+<span style="color: #50fa7b;">#custom-lock,</span>
+<span style="color: #50fa7b;">#custom-power</span> {
+  <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #1a142b;">#1a142b</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Dark Purple</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">padding</span>: 0.5rem 1rem;
+  <span style="color: #bd93f9;">margin</span>: 5px <span style="color: #bd93f9; font-weight: bold;">0</span>;
+}
+<span style="color: #50fa7b;">#clock</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #bb86fc;">#bb86fc</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Neon Purple</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">border-radius</span>: 0px 1rem 1rem 0px;
+  <span style="color: #bd93f9;">margin-right</span>: 1rem;
+}
+<span style="color: #50fa7b;">#battery</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #50fa7b;">#50fa7b</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Green</span><span style="color: #6272a4;"> */</span>
+}
+<span style="color: #50fa7b;">#battery.charging</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #f1fa8c;">#f1fa8c</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Yellow</span><span style="color: #6272a4;"> */</span>
+}
+<span style="color: #50fa7b;">#battery.warning:not(.charging)</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #ff5555;">#ff5555</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Red</span><span style="color: #6272a4;"> */</span>
+}
+<span style="color: #50fa7b;">#backlight</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #f1fa8c;">#f1fa8c</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Yellow</span><span style="color: #6272a4;"> */</span>
+}
+<span style="color: #50fa7b;">#backlight,</span>
+<span style="color: #50fa7b;">#battery</span> {
+  <span style="color: #bd93f9;">border-radius</span>: <span style="color: #bd93f9; font-weight: bold;">0</span>;
+}
+<span style="color: #50fa7b;">#pulseaudio</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #ffb86c;">#ffb86c</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Orange</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">border-radius</span>: 1rem 0px 0px 1rem;
+}
+<span style="color: #50fa7b;">#custom-music</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #bb86fc;">#bb86fc</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Neon Purple</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">border-radius</span>: 1rem;
+}
+<span style="color: #50fa7b;">#custom-lock</span> {
+  <span style="color: #bd93f9;">border-radius</span>: 1rem 0px 0px 1rem;
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #c792ea;">#c792ea</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Soft Purple</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">-webkit-filter</span>: brightness(<span style="color: #bd93f9; font-weight: bold;">200</span>%);
+}
+<span style="color: #50fa7b;">#custom-power</span> {
+  <span style="color: #bd93f9;">margin-right</span>: 1rem;
+  <span style="color: #bd93f9;">border-radius</span>: 0px 1rem 1rem 0px;
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #8be9fd;">#8be9fd</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Cyan</span><span style="color: #6272a4;"> */</span>
+}
+<span style="color: #50fa7b;">#tray</span> {
+  <span style="color: #bd93f9;">margin-right</span>: 1rem;
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #50fa7b;">#50fa7b</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Green</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">border-radius</span>: 1rem;
+}
+<span style="color: #50fa7b;">#window</span> {
+  <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #c792ea;">#c792ea</span>; <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Soft Purple</span><span style="color: #6272a4;"> */</span>
+  <span style="color: #bd93f9;">font-size</span>: 1em;
+  <span style="color: #bd93f9;">border-radius</span>: 1rem;
+}
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Save the file by pressing `Esc` to exit insert mode, then typing `:wq` and pressing Enter</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org565bf35" class="outline-2">
+<h2 id="org565bf35"><span class="section-number-2">9.</span> Switching Between KDE Plasma and Hyprland</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Now that you have both environments installed, you can choose which one to use at login:
+</p>
+
+<ol class="org-ol">
+<li>Log out of your current session by clicking on the Application Menu → Leave → Log Out</li>
+<li>At the login screen, look for a session selection button (usually a small icon near the password field)</li>
+<li>Click on this button to see available sessions</li>
+<li>Choose either &ldquo;Plasma&rdquo; (for KDE) or &ldquo;Hyprland&rdquo;</li>
+<li>Enter your password and log in</li>
+</ol>
+</div>
+<div id="outline-container-orgd7481d6" class="outline-3">
+<h3 id="orgd7481d6"><span class="section-number-3">9.1.</span> Understanding the Hyprland Interface</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+When you first log into Hyprland, you&rsquo;ll notice it&rsquo;s quite different from KDE:
+</p>
+
+<ul class="org-ul">
+<li>There is no desktop with icons</li>
+<li>Windows automatically tile and arrange themselves</li>
+<li>You navigate primarily with keyboard shortcuts (listed in the configuration file)</li>
+<li>The top bar (Waybar) shows workspaces and system information</li>
+</ul>
+
+<p>
+Key shortcuts to remember:
+</p>
+<ul class="org-ul">
+<li>Super (Windows key) + Enter: Open terminal</li>
+<li>Super + Q: Close active window</li>
+<li>Super + E: Open file manager</li>
+<li>Super + R: Open application launcher</li>
+<li>Super + 1-9: Switch to workspace 1-9</li>
+<li>Super + Arrow keys: Move focus between windows</li>
+<li>Super + Mouse drag: Move or resize windows</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org132f6a3" class="outline-2">
+<h2 id="org132f6a3"><span class="section-number-2">10.</span> Basic System Maintenance</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+As a new Linux user, understanding basic maintenance will help keep your system running smoothly:
+</p>
+</div>
+<div id="outline-container-org4da044f" class="outline-3">
+<h3 id="org4da044f"><span class="section-number-3">10.1.</span> Updating Your System</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+Regularly updating your system is important for security and stability:
+</p>
+
+<ol class="org-ol">
+<li>Open a terminal</li>
+<li>Run the following command:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">sudo</span> pacman -Syu
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Enter your password when prompted</li>
+<li>Type &rsquo;y&rsquo; to confirm updates</li>
+</ol>
+
+<p>
+It&rsquo;s recommended to update at least once a week.
+</p>
+</div>
+</div>
+<div id="outline-container-orgac55ac9" class="outline-3">
+<h3 id="orgac55ac9"><span class="section-number-3">10.2.</span> Installing Additional Software</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+EndeavourOS uses the pacman package manager to install software:
+</p>
+
+<ol class="org-ol">
+<li>To search for a package:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">pacman -Ss package_name
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>To install a package:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">sudo</span> pacman -S package_name
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>For software not in the official repositories, you can use the AUR helper &rsquo;yay&rsquo;:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">yay -S package_name
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org402ca99" class="outline-3">
+<h3 id="org402ca99"><span class="section-number-3">10.3.</span> Common Issues and Troubleshooting</h3>
+<div class="outline-text-3" id="text-10-3">
+<ul class="org-ul">
+<li><b>If X doesn&rsquo;t start</b>: Press Ctrl+Alt+F2 to access a terminal, log in, and troubleshoot</li>
+<li><b>If you forget your password</b>: Boot into recovery mode and reset it</li>
+<li><b>If updates break something</b>: You can downgrade packages with:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">sudo</span> pacman -U /var/cache/pacman/pkg/package-old_version.pkg.tar.zst
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org153b7be" class="outline-2">
+<h2 id="org153b7be"><span class="section-number-2">11.</span> Customizing Your Setup</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org1f67ac6" class="outline-3">
+<h3 id="org1f67ac6"><span class="section-number-3">11.1.</span> KDE Plasma Customization</h3>
+<div class="outline-text-3" id="text-11-1">
+<ol class="org-ol">
+<li>Right-click on the desktop and select &ldquo;Configure Desktop&rdquo;</li>
+<li>Access the System Settings for comprehensive customization options</li>
+<li>Explore themes, widgets, and desktop effects</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org523b906" class="outline-3">
+<h3 id="org523b906"><span class="section-number-3">11.2.</span> Hyprland Customization</h3>
+<div class="outline-text-3" id="text-11-2">
+<ol class="org-ol">
+<li>Edit the configuration file using Neovim:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">nvim ~/.config/hypr/hyprland.conf
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Modify settings according to your preferences</li>
+<li>Save changes by pressing `Esc` and typing `:wq`, then restart Hyprland (Super + SHIFT + X to exit, then log back in)</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org59e5cb6" class="outline-2">
+<h2 id="org59e5cb6"><span class="section-number-2">12.</span> Further Resources for Beginners</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+As you continue your Linux journey, these resources will be invaluable:
+</p>
+</div>
+<div id="outline-container-org0b5bf9e" class="outline-3">
+<h3 id="org0b5bf9e"><span class="section-number-3">12.1.</span> Documentation and Wikis</h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li><b>Arch Wiki</b>: <a href="https://wiki.archlinux.org/">https://wiki.archlinux.org/</a> - Comprehensive documentation for Arch-based systems</li>
+<li><b>EndeavourOS Wiki</b>: <a href="https://discovery.endeavouros.com/">https://discovery.endeavouros.com/</a> - Specific guidance for EndeavourOS</li>
+<li><b>KDE Documentation</b>: <a href="https://docs.kde.org/">https://docs.kde.org/</a> - Official documentation for KDE Plasma</li>
+<li><b>Hyprland Wiki</b>: <a href="https://wiki.hyprland.org/">https://wiki.hyprland.org/</a> - Official documentation for Hyprland</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org40d4cf6" class="outline-3">
+<h3 id="org40d4cf6"><span class="section-number-3">12.2.</span> Community Support</h3>
+<div class="outline-text-3" id="text-12-2">
+<ul class="org-ul">
+<li><b>EndeavourOS Forums</b>: <a href="https://forum.endeavouros.com/">https://forum.endeavouros.com/</a> - Friendly community for beginners</li>
+<li><b>EndeavourOS Reddit</b>: <a href="https://www.reddit.com/r/EndeavourOS/">https://www.reddit.com/r/EndeavourOS/</a> - Active subreddit for questions</li>
+<li><b>Hyprland Discord</b>: Available through the Hyprland website</li>
+<li><b>Arch Linux Forums</b>: <a href="https://bbs.archlinux.org/">https://bbs.archlinux.org/</a> - More advanced technical discussions</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f4b72a" class="outline-3">
+<h3 id="org3f4b72a"><span class="section-number-3">12.3.</span> Learning Resources</h3>
+<div class="outline-text-3" id="text-12-3">
+<ul class="org-ul">
+<li><b>Linux Journey</b>: <a href="https://linuxjourney.com/">https://linuxjourney.com/</a> - Interactive tutorials for beginners</li>
+<li><b>The Linux Command Line</b>: A comprehensive guide available online</li>
+<li><b>LinuxUpskillChallenge</b>: Monthly beginner courses on Reddit</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org09d3528" class="outline-2">
+<h2 id="org09d3528"><span class="section-number-2">13.</span> Backing Up Your System</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Establishing a backup routine is crucial for any operating system:
+</p>
+</div>
+<div id="outline-container-org5615d18" class="outline-3">
+<h3 id="org5615d18"><span class="section-number-3">13.1.</span> Simple Backup Methods</h3>
+<div class="outline-text-3" id="text-13-1">
+<ol class="org-ol">
+<li><b>Important Files Backup</b>:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">rsync -avz --progress /home/username/important_folder/ /path/to/backup/location/
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><b>Home Directory Backup</b>:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">sudo</span> timeshift --create --comments <span style="color: #f1fa8c;">"Before major system change"</span>
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Install Timeshift for system snapshots:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #bd93f9;">sudo</span> pacman -S timeshift
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org5ae5db8" class="outline-2">
+<h2 id="org5ae5db8"><span class="section-number-2">14.</span> Conclusion</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+Congratulations! You&rsquo;ve successfully installed EndeavourOS with both KDE Plasma and Hyprland. This hybrid setup gives you the best of both worlds:
+</p>
+
+<ul class="org-ul">
+<li>KDE Plasma when you want a familiar, full-featured desktop environment</li>
+<li>Hyprland when you want an efficient, keyboard-driven workflow</li>
+</ul>
+
+<p>
+As you become more comfortable with Linux, don&rsquo;t be afraid to explore and customize your system further. The Arch Wiki (<a href="https://wiki.archlinux.org/">https://wiki.archlinux.org/</a>) is an excellent resource for detailed information, and the EndeavourOS forums (<a href="https://forum.endeavouros.com/">https://forum.endeavouros.com/</a>) are very welcoming to beginners.
+</p>
+
+<p>
+Remember that learning Linux is a journey. Take your time, experiment in ways you&rsquo;re comfortable with, and gradually build your knowledge and skills. Welcome to the Linux community!
+</p>
+</div>
+<div id="outline-container-orgd81afb3" class="outline-3">
+<h3 id="orgd81afb3"><span class="section-number-3">14.1.</span> Next Steps</h3>
+<div class="outline-text-3" id="text-14-1">
+<p>
+Consider these projects to further enhance your Linux skills:
+</p>
+
+<ol class="org-ol">
+<li>Learn basic shell scripting to automate routine tasks</li>
+<li>Explore different terminals and customize your prompt</li>
+<li>Try different applications for common tasks (web browsers, media players, etc.)</li>
+<li>Participate in Linux communities to learn from others</li>
+<li>Consider contributing to open-source projects once you&rsquo;ve gained confidence</li>
+</ol>
+
+<p>
+Enjoy your new EndeavourOS system with Hyprland and KDE Plasma!
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Parikshieth Harish</p>
+<p class="date">Created: 2025-04-13 Sun 13:41</p>
+</div>
+</body>
+</html>
